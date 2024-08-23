@@ -3,12 +3,22 @@
 
 pub mod util;
 
+use std::sync::Mutex;
+use tauri::{Manager};
 use crate::util::*;
 
+
 fn main() {
-  println!("{}", detect_os());
+  // println!("{}", detect_os());
   tauri::Builder::default()
-    .invoke_handler(tauri::generate_handler![detect_os,get_linux_distro])
+    .setup(|app| {
+      app.manage(Mutex::new(UserOS {
+        os: "Unknown",
+      }));
+      detect_os(app.state());
+      Ok(())
+    })
+    .invoke_handler(tauri::generate_handler![detect_os,get_linux_distro,send_os])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }
