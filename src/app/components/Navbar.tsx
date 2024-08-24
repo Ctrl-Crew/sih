@@ -1,27 +1,28 @@
-import { useState } from "react";
-import { Button, SegmentedControl, Text } from "@mantine/core";
-import Link from "next/link";
+import { useState } from "react"
+import Link from "next/link"
+import { Button, SegmentedControl, Text } from "@mantine/core"
 import {
-  IconShoppingCart,
+  Icon2fa,
+  IconDatabaseImport,
+  IconFileAnalytics,
+  IconFingerprint,
+  IconHome,
+  IconKey,
   IconLicense,
+  IconLogout,
   IconMessage2,
   IconMessages,
-  IconFingerprint,
-  IconKey,
-  IconSettings,
-  Icon2fa,
-  IconUsers,
-  IconFileAnalytics,
-  IconDatabaseImport,
   IconReceipt2,
   IconReceiptRefund,
-  IconLogout,
-  IconSwitchHorizontal,
   IconRocket,
-  IconHome,
-} from "@tabler/icons-react";
-import classes from "./Navbar.module.css";
-import { ModeToggle } from "./ModeToggle";
+  IconSettings,
+  IconShoppingCart,
+  IconSwitchHorizontal,
+  IconUsers,
+} from "@tabler/icons-react"
+
+import { ModeToggle } from "./ModeToggle"
+import classes from "./Navbar.module.css"
 
 const tab = [
   { link: "/", label: "Home", icon: IconHome },
@@ -29,15 +30,15 @@ const tab = [
   { link: "/AuditConfig", label: "Audit Config", icon: IconSettings },
 
   { link: "/Targets", label: "Targets", icon: IconDatabaseImport },
-];
+]
 
 export function handleClick() {
-  <Link href="/TriggerAudits"></Link>;
+  ;<Link href="/TriggerAudits"></Link>
 }
 
 export function NavbarSegmented() {
   // const [section, setSection] = useState<'account' | 'general'>('account');
-  const [active, setActive] = useState("Billing");
+  const [active, setActive] = useState("Billing")
 
   const links = tab.map((item) => (
     <Link
@@ -52,7 +53,7 @@ export function NavbarSegmented() {
       <item.icon className={classes.linkIcon} stroke={1.5} />
       <span>{item.label}</span>
     </Link>
-  ));
+  ))
 
   return (
     <>
@@ -93,5 +94,5 @@ export function NavbarSegmented() {
         </div>
       </nav>
     </>
-  );
+  )
 }

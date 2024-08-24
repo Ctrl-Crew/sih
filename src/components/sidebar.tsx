@@ -1,27 +1,28 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Center, Tooltip, UnstyledButton, Stack, rem } from "@mantine/core";
+import { useState } from "react"
+import { Center, rem, Stack, Tooltip, UnstyledButton } from "@mantine/core"
+import { MantineLogo } from "@mantinex/mantine-logo"
 import {
-  IconHome2,
-  IconGauge,
+  IconCalendarStats,
   IconDeviceDesktopAnalytics,
   IconFingerprint,
-  IconCalendarStats,
-  IconUser,
-  IconSettings,
+  IconGauge,
+  IconHome2,
   IconLogout,
+  IconSettings,
   IconSwitchHorizontal,
-} from "@tabler/icons-react";
-import { MantineLogo } from "@mantinex/mantine-logo";
-import classes from "@/styles/sidebar.module.css";
+  IconUser,
+} from "@tabler/icons-react"
+
+import classes from "@/styles/sidebar.module.css"
 
 interface NavbarLinkProps {
-  icon: typeof IconHome2;
+  icon: typeof IconHome2
 
-  label: string;
-  active?: boolean;
-  onClick?(): void;
+  label: string
+  active?: boolean
+  onClick?(): void
 }
 
 function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
@@ -35,7 +36,7 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
         <Icon style={{ width: rem(20), height: rem(20) }} stroke={1.5} />
       </UnstyledButton>
     </Tooltip>
-  );
+  )
 }
 
 const mockdata = [
@@ -44,10 +45,10 @@ const mockdata = [
   { icon: IconDeviceDesktopAnalytics, label: "Audit Config" },
   { icon: IconCalendarStats, label: "Trigger Audit" },
   { icon: IconUser, label: "Target" },
-];
+]
 
 export function NavbarMinimalColored() {
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(2)
 
   const links = mockdata.map((link, index) => (
     <NavbarLink
@@ -56,7 +57,7 @@ export function NavbarMinimalColored() {
       active={index === active}
       onClick={() => setActive(index)}
     />
-  ));
+  ))
 
   return (
     <nav className={classes.navbar}>
@@ -75,5 +76,5 @@ export function NavbarMinimalColored() {
         <NavbarLink icon={IconLogout} label="Logout" />
       </Stack>
     </nav>
-  );
+  )
 }

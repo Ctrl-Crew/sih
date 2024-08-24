@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 export interface IconProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -64,4 +64,4 @@ export const Icons = {
       />
     </svg>
   ),
-};
+}
