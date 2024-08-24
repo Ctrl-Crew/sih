@@ -61,7 +61,7 @@ export function NavbarSegmented() {
         <Link href="/TriggerAudits">
           <div className={classes.triggerAuditdiv}>
             <Button className={classes.triggerAuditButton}>
-              <IconRocket />
+              <IconRocket style={{marginRight:"8px"}}/>
               Trigger Audit
             </Button>
           </div>
