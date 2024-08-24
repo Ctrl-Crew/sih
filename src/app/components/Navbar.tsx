@@ -25,6 +25,7 @@ import { ModeToggle } from "./ModeToggle"
 import classes from "./Navbar.module.css"
 
 const tab = [
+   {link: "/TriggerAudits", label: "Trigger Audit", icon: IconRocket},
   { link: "/", label: "Home", icon: IconHome },
   { link: "/PostAuditReport", label: "Post Audit report ", icon: IconReceipt2 },
   { link: "/AuditConfig", label: "Audit Config", icon: IconSettings },
@@ -58,14 +59,7 @@ export function NavbarSegmented() {
   return (
     <>
       <nav className={classes.navbar}>
-        <Link href="/TriggerAudits">
-          <div className={classes.triggerAuditdiv}>
-            <Button className={classes.triggerAuditButton}>
-              <IconRocket style={{marginRight:"8px"}}/>
-              Trigger Audit
-            </Button>
-          </div>
-        </Link>
+         
 
         <div className={classes.navbarMain}>{links}</div>
 
