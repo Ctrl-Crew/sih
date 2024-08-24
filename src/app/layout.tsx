@@ -1,24 +1,32 @@
-"use client";
-import "@mantine/core/styles.css";
+"use client"
+
+import "@mantine/core/styles.css"
 
 import {
+  ActionIcon,
+  AppShell,
+  Burger,
+  Button,
   ColorSchemeScript,
   Container,
+  Group,
   MantineProvider,
+  Skeleton,
   Stack,
   Text,
-} from "@mantine/core";
-import { NavbarMinimalColored } from "@/components/sidebar";
-import { AppShell, Burger, Group, Skeleton } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { MantineLogo } from "@mantinex/mantine-logo";
-import { NavbarSegmented } from "./components/Navbar";
-import { useMantineColorScheme, Button } from "@mantine/core";
-import { ActionIcon, useComputedColorScheme } from "@mantine/core";
-import { IconSun, IconMoon } from "@tabler/icons-react";
-import cx from "clsx";
-import classes from "./layout.module.css";
-import { ModeToggle } from "./components/ModeToggle";
+  useComputedColorScheme,
+  useMantineColorScheme,
+} from "@mantine/core"
+import { useDisclosure } from "@mantine/hooks"
+import { MantineLogo } from "@mantinex/mantine-logo"
+import { IconMoon, IconSun } from "@tabler/icons-react"
+import cx from "clsx"
+
+import { NavbarMinimalColored } from "@/components/sidebar"
+
+import { ModeToggle } from "./components/ModeToggle"
+import { NavbarSegmented } from "./components/Navbar"
+import classes from "./layout.module.css"
 
 // export const metadata = {
 //   title: "My Mantine app",
@@ -28,10 +36,10 @@ import { ModeToggle } from "./components/ModeToggle";
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
-  const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true);
+  const [mobileOpened, { toggle: toggleMobile }] = useDisclosure()
+  const [desktopOpened, { toggle: toggleDesktop }] = useDisclosure(true)
 
   return (
     <html lang="en">
@@ -86,5 +94,5 @@ export default function RootLayout({
         </MantineProvider>
       </body>
     </html>
-  );
+  )
 }
