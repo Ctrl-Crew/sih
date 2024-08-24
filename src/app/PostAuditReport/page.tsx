@@ -1,3 +1,13 @@
-export default function PostAuditReport() {
-  return <h1>Hello PostAuditReport niggas </h1>
+"use client";
+
+import React from "react";
+import { TableReviews } from "./components/TableReviews/TableReviews";
+
+export default function PastAuditPage() {
+  return (
+    <div>
+      <h1>Past Audits:- </h1>
+      <TableReviews />
+    </div>
+  );
 }
