@@ -18,6 +18,7 @@ import classes from "@/styles/sidebar.module.css";
 
 interface NavbarLinkProps {
   icon: typeof IconHome2;
+
   label: string;
   active?: boolean;
   onClick?(): void;
@@ -39,12 +40,10 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
 
 const mockdata = [
   { icon: IconHome2, label: "Home" },
-  { icon: IconGauge, label: "Dashboard" },
-  { icon: IconDeviceDesktopAnalytics, label: "Analytics" },
-  { icon: IconCalendarStats, label: "Releases" },
-  { icon: IconUser, label: "Account" },
-  { icon: IconFingerprint, label: "Security" },
-  { icon: IconSettings, label: "Settings" },
+  { icon: IconGauge, label: "Post Audit Report" },
+  { icon: IconDeviceDesktopAnalytics, label: "Audit Config" },
+  { icon: IconCalendarStats, label: "Trigger Audit" },
+  { icon: IconUser, label: "Target" },
 ];
 
 export function NavbarMinimalColored() {

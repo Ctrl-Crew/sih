@@ -58,7 +58,7 @@ pub fn detect_os(state: State<'_, Mutex<UserOS>>) {
 }
 
 #[tauri::command]
-#[cfg(target_os = "linux")]
+// #[cfg(target_os = "linux")]
 pub fn get_linux_distro() -> &'static str {
     let distro = Command::new("lsb_release")
     .arg("--id")
@@ -74,7 +74,9 @@ pub fn get_linux_distro() -> &'static str {
         "Ubuntu" => return "Ubuntu",
         "Red Hat Enterprise Linux" => return "RedHat",
         "Arch" => return "Arch",
+        
         _ => return "Unknown",
+
     }
 }
 
