@@ -1,3 +1,4 @@
+"use client"
 import { Table, Progress, Anchor, Text, Group } from "@mantine/core";
 import classes from "./TableReviews.module.css";
 
@@ -103,8 +104,8 @@ export function TableReviews() {
             <th>Audit Name</th>
             <th>Time Taken</th>
             <th>Status</th>
-            <th>Total Reviews</th>
-            <th>Reviews Distribution</th>
+            <th>Packages</th>
+            <th>Packages Distribution</th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>
