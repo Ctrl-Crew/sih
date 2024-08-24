@@ -57,7 +57,8 @@
 }
 
 .linkIcon {
-  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-2));
+  /* color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-2)); */
+  color: aliceblue;
   margin-right: var(--mantine-spacing-sm);
   width: rem(25px);
   height: rem(25px);
@@ -78,8 +79,32 @@
   align-items: flex-start;
 }
 
-.triggerAuditButton{
-padding:   0 35px;
-margin: 20px;
 
+.triggerAuditButton {
+  background-color: rgb(58, 101, 176);
+  color: white;
+  transition: background-color 0.3s ease-out, transform 0.3s ease-out;
+
+  &:hover {
+    background-color: #3a65b0;
+    color: white;
+  }
+
+  &[data-active] {
+    transform: scale(1.1);
+    transition: background-color 0.3s ease-out, transform 0.3s ease-out;
+
+    &,
+    &:hover {
+      background-color: rgb(58, 101, 176);
+      color: white;
+
+      &,
+      & .linkIcon {
+        color: var(--mantine-color-white);
+      }
+    }
+  }
 }
+
+
