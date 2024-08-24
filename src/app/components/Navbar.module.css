@@ -7,11 +7,13 @@
   flex-direction: column;
   border-right: rem(1px) solid
     light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+    margin-top: var(--mantine-spacing-xl);
+  
 }
 
 .navbarMain {
   flex: 1;
-  margin-top: var(--mantine-spacing-xl);
+  /* margin-top: var(--mantine-spacing-xl); */
 }
 
 .title {
@@ -74,4 +76,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+.triggerAuditButton{
+  
+ 
+  padding:  2px 50px;
+ margin: 20px 10px;
+
 }
